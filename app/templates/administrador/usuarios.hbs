@@ -1,0 +1,135 @@
+<Administrador::Encabezado @usuario="Nombre del usuario" />
+{{!-- Agregar filtros de busqueda --}}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            Interfaz de Usuario
+        </div>
+        <Administrador::Filtros @usuario="" />
+        <body>
+            <div class="container mt-5">
+                <div class="d-flex justify-content-end mb-3">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#insertModal"
+                        type="button">Insertar Usuario</button>
+                </div>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Juan Pérez</td>
+                            <td>juan@example.com</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#editModal" type="button">Editar</button>
+                                <button class="btn btn-danger btn-sm" type="button">Eliminar</button>
+                            </td>
+                        </tr>
+                        {{!-- Más filas aquí --}}
+                    </tbody>
+                </table>
+            </div>
+
+            {{!-- Modal para Insertar Usuario --}}
+            <div class="modal fade" id="insertModal" tabindex="-1" aria-labelledby="insertModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registerModalLabel">Registrar Usuario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="firstName" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lastName1" class="form-label">Apellido Paterno</label>
+                                    <input type="text" class="form-control" id="lastName1" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lastName2" class="form-label">Apellido Materno</label>
+                                    <input type="text" class="form-control" id="lastName2" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Número de Teléfono</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="emergencyPhone" class="form-label">Número de Emergencia</label>
+                                    <input type="tel" class="form-control" id="emergencyPhone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="clientType" class="form-label">Tipo de Cliente</label>
+                                    <select class="form-select" id="clientType" required>
+                                        <option value="" selected disabled>Seleccione un tipo de cliente</option>
+                                        <option value="Regular">Regular</option>
+                                        <option value="VIP">VIP</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-success">Registrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{!-- Modal para Editar Usuario --}}
+            <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registerModalLabel">Registrar Usuario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="firstName" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lastName1" class="form-label">Apellido Paterno</label>
+                                    <input type="text" class="form-control" id="lastName1" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lastName2" class="form-label">Apellido Materno</label>
+                                    <input type="text" class="form-control" id="lastName2" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Número de Teléfono</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="emergencyPhone" class="form-label">Número de Emergencia</label>
+                                    <input type="tel" class="form-control" id="emergencyPhone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="clientType" class="form-label">Tipo de Cliente</label>
+                                    <select class="form-select" id="clientType" required>
+                                        <option value="" selected disabled>Seleccione un tipo de cliente</option>
+                                        <option value="Regular">Regular</option>
+                                        <option value="VIP">VIP</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-success">Registrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </div>
+</div>
+
+
+<Administrador::CalendarScheduler/>
